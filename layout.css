@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+h1 {
+    font-size: 40px;
+}
+body {
+    background-color: #4a115c;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+a:link {
+    color: pink;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  
+a:hover {
+    color: magenta;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  
+a:active {
+    color: magenta;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    border: 3px solid #777;
+    border-radius: 100%;
+}
+
+.logo2 {
+    max-width: 50px;
+    color: white;
+    height: auto;
+    filter: invert(100%);
+}
+
+.column {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 15px;
+}
+  
+.cat-label {
+    margin: 0;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+  /* Add border to the right of the columns */
+.column {
+    border-right: 3px solid #777;
+}
+  
+  /* Remove border from the last column */
+.column:last-child {
+    border-right: none;
+}
+.bigimage {
+    max-width: 1024px;
+    border: 10px solid #777;
+    border-radius:100%;
+}
+.catimage {
+    max-width: 400px;
+    border: 5px solid #777;
+}
+@media screen and (max-width: 600px) {
+    .bigimage {
+      max-width: 1024px;
+      width: 100%;
+    }
+    .column {
+        width: 100%;
+        border-right: 0px
+    }
+    .logo {
+        width: 100%;
+    }
+    .logo2 {
+        width: 100%;
+    }
+    .catimage {
+        width: 100%;
+    }
+}

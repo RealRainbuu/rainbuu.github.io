@@ -1,18 +1,94 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      @font-face {
-        font-family: "Bitstream Vera Serif Bold";
-        src: url("https://mdn.github.io/css-examples/web-fonts/VeraSeBd.ttf");
-      body {
-        background-color: #c425f5;
-      }
-  
-    </style>
+    <link rel="stylesheet" href="layout.css">
   </head>
   <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <img class="bigimage" src="https://cdn.discordapp.com/avatars/360903190968926210/c3133ecdfbeb24d1722dfa75bbbbb851?size=1024" alt="Profile Picture" draggable="false">
+    <hr style="height:5px;border-width:0;color:gray;background-color:#777">
+    <h1>rainbuu.space</h1>
+    <p>Rainbuu is some idiot that likes Minecraft, Terraria, and practically anything that doesn't involve web development.</p>
+    <p>I have been working on modded minecraft for a while. Here are some of my current projects:</p>
+    <div class="logo-container">
+      <a href="https://modernmodpacks.site/" title="Modern Modpacks" draggable="false">
+        <img class="logo" src="https://github.com/Modern-Modpacks/assets/blob/main/logo.png?raw=true" alt="Modern Modpacks" draggable="false">
+      </a>
+      <a href="https://www.curseforge.com/minecraft/modpacks/supersymmetry" title="Supersymmetry" draggable="false">
+        <img class="logo" src="https://avatars.githubusercontent.com/u/116089810?s=200&v=4" alt="Supersymmetry" draggable="false">
+      </a>
+      <a href="https://github.com/Hellish-Mods" title="Hellish Mods" draggable="false">
+        <img class="logo" src="https://github.com/Modern-Modpacks/assets/blob/main/HMlogo.png?raw=true" alt="Hellish Mods" draggable="false">
+      </a>
+    </div>
+    <p>Here are some of my socials:</p>
+    <div class="logo-container">
+      <a href="https://github.com/RealRainbuu" title="Github" draggable="false">
+        <img class="logo2" src="https://www.svgrepo.com/show/512317/github-142.svg" alt="Github" draggable="false">
+      </a>
+      <a href="https://www.curseforge.com/minecraft/modpacks/supersymmetry" title="Curseforge" draggable="false">
+        <img class="logo2" src="https://cdn.icon-icons.com/icons2/3911/PNG/512/curseforge_logo_icon_247241.png" alt="Curseforge" draggable="false">
+      </a>
+      <a href=https://www.youtube.com/channel/UCUbKsgKCm1gKQDCOcrDTBGw" title="Youtube" draggable="false">
+        <img class="logo2" src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="Youtube" draggable="false">
+      </a>
+    </div>
+    <hr style="height:5px;border-width:0;color:gray;background-color:#777">
+    <h1>My cats :)</h1>
+    <div class="row">
+      <div class="column">
+        <h2 class="cat-label">Kira</h2>
+        <br>
+        <img src="assets/kira.jpg" class="catimage" alt="Kira" draggable="false">
+        <p class="cat-age" data-birthdate="2022-04-16">Age: Calculating...</p>
+        <p>Female</p>
+        <p>Sink Dweller</p>
+      </div>
+      <div class="column">
+        <h2 class="cat-label">Freddie</h2>
+        <br>
+        <img src="assets/freddie.jpg" class="catimage" alt="Kira" draggable="false">
+        <p class="cat-age" data-birthdate="2023-03-30">Age: Calculating...</p>
+        <p>Male</p>
+        <p>Professional Goober</p>
+      </div>
+    </div>
+    <script>
+      // Get all cat age elements
+      const catAgeElements = document.querySelectorAll(".cat-age");
+
+      // Calculate and display the cat's age
+      catAgeElements.forEach(catAgeElement => {
+        const birthdateString = catAgeElement.getAttribute("data-birthdate");
+        const birthdate = new Date(birthdateString);
+        const currentDate = new Date();
+
+        const yearsDiff = currentDate.getFullYear() - birthdate.getFullYear();
+        const monthsDiff = currentDate.getMonth() - birthdate.getMonth();
+        const totalMonths = yearsDiff * 12 + monthsDiff;
+
+        let ageText = "";
+
+        if (totalMonths > 0) {
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
+
+        if (years > 0) {
+          ageText += `${years} year${years !== 1 ? 's' : ''}`;
+        }
+
+        if (months > 0) {
+          if (years > 0) {
+            ageText += " and ";
+          }
+        }
+
+        if (months > 0) {
+          ageText += `${months} month${months !== 1 ? 's' : ''}`;
+        }
+      }
+
+      catAgeElement.textContent = ageText !== "" ? `Age: ${ageText} old` : "";
+      });
+    </script>
   </body>
 </html>
